@@ -18,56 +18,51 @@
  * under the License.
  */
 
-class Google_Service_ServiceTest extends PHPUnit_Framework_TestCase
+namespace Google\Service;
+
+use PHPUnit\Framework\TestCase;
+
+class ServiceTest extends TestCase
 {
-  public function setUp()
-  {
-    // ensure dependent classes exist
-    $this->getMock('Google_Service');
-    $this->getMock('Google_Model');
-    $this->getMock('Google_Collection');
-    $this->getMock('Google_Service_Resource');
-  }
-
-  /**
-   * @dataProvider serviceProvider
-   */
-  public function testIncludes($class)
-  {
-    $this->assertTrue(
-        class_exists($class),
-        sprintf('Failed asserting class %s exists.', $class)
-    );
-  }
-
-  public function testCaseConflicts()
-  {
-    $apis = $this->apiProvider();
-    $classes = array_unique(array_map('strtolower', $apis));
-    $this->assertCount(count($apis), $classes);
-  }
-
-  public function serviceProvider()
-  {
-    $classes = array();
-    $path = __DIR__ . '/../src/Google/Service/';
-    foreach (glob($path . "*.php") as $file) {
-      $service = basename($file, '.php');
-      $classes[] = array('Google_Service_' . $service);
-      foreach (glob($path . "{$service}/*.php") as $file) {
-        $classes[] = array("Google_Service_{$service}_" . basename($file, '.php'));
-      }
-      foreach (glob($path . "{$service}/Resource/*.php") as $file) {
-        $classes[] = array("Google_Service_{$service}_Resource_" . basename($file, '.php'));
-      }
+    /**
+     * @dataProvider serviceProvider
+     */
+    public function testIncludes($class)
+    {
+        $this->assertTrue(
+            class_exists($class),
+            sprintf('Failed asserting class %s exists.', $class)
+        );
     }
 
-    return $classes;
-  }
+    public function testCaseConflicts()
+    {
+        $apis = $this->apiProvider();
+        $classes = array_unique(array_map('strtolower', $apis));
+        $this->assertCount(count($apis), $classes);
+    }
 
-  public function apiProvider()
-  {
-    $path = __DIR__ . '/../src/Google/Service/*';
-    return array_filter(glob($path), 'is_dir');
-  }
+    public function serviceProvider()
+    {
+        $classes = array();
+        $path = __DIR__ . '/../src/generated/';
+        foreach (glob($path . "*") as $dir) {
+            $service = basename($dir);
+            $classes[] = array("Google\Service\\$service\\$service");
+            foreach (glob($path . "$service/Model/*.php") as $file) {
+                $classes[] = array("Google\Service\\$service\Model\\" . basename($file, '.php'));
+            }
+            foreach (glob($path . "$service/Resource/*.php") as $file) {
+                $classes[] = array("Google\Service\\$service\Resource\\" . basename($file, '.php'));
+            }
+        }
+
+        return $classes;
+    }
+
+    public function apiProvider()
+    {
+        $path = __DIR__ . '/../src/generated/*';
+        return array_filter(glob($path), 'is_dir');
+    }
 }

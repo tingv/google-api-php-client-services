@@ -12,8 +12,11 @@
         "phpunit/phpunit": "^4.8|^5"
     },
     "autoload": {
-        "psr-0": {
-            "Google_Service_": "src"
+        "files": [
+            "src/autoload.php"
+        ],
+        "psr-4": {
+            "Google\\Service\\": ["src", "src/generated"]
         }
     }
 }
