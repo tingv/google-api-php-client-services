@@ -15,16 +15,23 @@
  * the License.
  */
 
-class Google_Service_CloudResourceManager_GetPolicyOptions extends Google_Model
+class Google_Service_CloudResourceManager_Ancestor extends Google_Model
 {
-  public $requestedPolicyVersion;
+  protected $resourceIdType = 'Google_Service_CloudResourceManager_ResourceId';
+  protected $resourceIdDataType = '';
 
-  public function setRequestedPolicyVersion($requestedPolicyVersion)
+  /**
+   * @param Google_Service_CloudResourceManager_ResourceId
+   */
+  public function setResourceId(Google_Service_CloudResourceManager_ResourceId $resourceId)
   {
-    $this->requestedPolicyVersion = $requestedPolicyVersion;
+    $this->resourceId = $resourceId;
   }
-  public function getRequestedPolicyVersion()
+  /**
+   * @return Google_Service_CloudResourceManager_ResourceId
+   */
+  public function getResourceId()
   {
-    return $this->requestedPolicyVersion;
+    return $this->resourceId;
   }
 }

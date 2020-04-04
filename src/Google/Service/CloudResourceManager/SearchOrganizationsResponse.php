@@ -15,27 +15,13 @@
  * the License.
  */
 
-class Google_Service_CloudResourceManager_SearchFoldersResponse extends Google_Collection
+class Google_Service_CloudResourceManager_SearchOrganizationsResponse extends Google_Collection
 {
-  protected $collection_key = 'folders';
-  protected $foldersType = 'Google_Service_CloudResourceManager_Folder';
-  protected $foldersDataType = 'array';
+  protected $collection_key = 'organizations';
   public $nextPageToken;
+  protected $organizationsType = 'Google_Service_CloudResourceManager_Organization';
+  protected $organizationsDataType = 'array';
 
-  /**
-   * @param Google_Service_CloudResourceManager_Folder
-   */
-  public function setFolders($folders)
-  {
-    $this->folders = $folders;
-  }
-  /**
-   * @return Google_Service_CloudResourceManager_Folder
-   */
-  public function getFolders()
-  {
-    return $this->folders;
-  }
   public function setNextPageToken($nextPageToken)
   {
     $this->nextPageToken = $nextPageToken;
@@ -43,5 +29,19 @@ class Google_Service_CloudResourceManager_SearchFoldersResponse extends Google_C
   public function getNextPageToken()
   {
     return $this->nextPageToken;
+  }
+  /**
+   * @param Google_Service_CloudResourceManager_Organization
+   */
+  public function setOrganizations($organizations)
+  {
+    $this->organizations = $organizations;
+  }
+  /**
+   * @return Google_Service_CloudResourceManager_Organization
+   */
+  public function getOrganizations()
+  {
+    return $this->organizations;
   }
 }

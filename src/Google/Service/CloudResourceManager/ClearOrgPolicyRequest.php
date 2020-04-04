@@ -15,26 +15,25 @@
  * the License.
  */
 
-class Google_Service_CloudResourceManager_Binding extends Google_Collection
+class Google_Service_CloudResourceManager_ClearOrgPolicyRequest extends Google_Model
 {
-  protected $collection_key = 'members';
-  public $members;
-  public $role;
+  public $constraint;
+  public $etag;
 
-  public function setMembers($members)
+  public function setConstraint($constraint)
   {
-    $this->members = $members;
+    $this->constraint = $constraint;
   }
-  public function getMembers()
+  public function getConstraint()
   {
-    return $this->members;
+    return $this->constraint;
   }
-  public function setRole($role)
+  public function setEtag($etag)
   {
-    $this->role = $role;
+    $this->etag = $etag;
   }
-  public function getRole()
+  public function getEtag()
   {
-    return $this->role;
+    return $this->etag;
   }
 }

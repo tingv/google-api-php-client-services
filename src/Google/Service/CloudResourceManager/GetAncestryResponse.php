@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_CloudResourceManager_Binding extends Google_Collection
+class Google_Service_CloudResourceManager_GetAncestryResponse extends Google_Collection
 {
-  protected $collection_key = 'members';
-  public $members;
-  public $role;
+  protected $collection_key = 'ancestor';
+  protected $ancestorType = 'Google_Service_CloudResourceManager_Ancestor';
+  protected $ancestorDataType = 'array';
 
-  public function setMembers($members)
+  /**
+   * @param Google_Service_CloudResourceManager_Ancestor
+   */
+  public function setAncestor($ancestor)
   {
-    $this->members = $members;
+    $this->ancestor = $ancestor;
   }
-  public function getMembers()
+  /**
+   * @return Google_Service_CloudResourceManager_Ancestor
+   */
+  public function getAncestor()
   {
-    return $this->members;
-  }
-  public function setRole($role)
-  {
-    $this->role = $role;
-  }
-  public function getRole()
-  {
-    return $this->role;
+    return $this->ancestor;
   }
 }

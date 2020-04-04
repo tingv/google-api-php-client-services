@@ -15,26 +15,26 @@
  * the License.
  */
 
-class Google_Service_CloudResourceManager_ListFoldersResponse extends Google_Collection
+class Google_Service_CloudResourceManager_ListLiensResponse extends Google_Collection
 {
-  protected $collection_key = 'folders';
-  protected $foldersType = 'Google_Service_CloudResourceManager_Folder';
-  protected $foldersDataType = 'array';
+  protected $collection_key = 'liens';
+  protected $liensType = 'Google_Service_CloudResourceManager_Lien';
+  protected $liensDataType = 'array';
   public $nextPageToken;
 
   /**
-   * @param Google_Service_CloudResourceManager_Folder
+   * @param Google_Service_CloudResourceManager_Lien
    */
-  public function setFolders($folders)
+  public function setLiens($liens)
   {
-    $this->folders = $folders;
+    $this->liens = $liens;
   }
   /**
-   * @return Google_Service_CloudResourceManager_Folder
+   * @return Google_Service_CloudResourceManager_Lien
    */
-  public function getFolders()
+  public function getLiens()
   {
-    return $this->folders;
+    return $this->liens;
   }
   public function setNextPageToken($nextPageToken)
   {

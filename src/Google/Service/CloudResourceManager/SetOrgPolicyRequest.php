@@ -15,26 +15,23 @@
  * the License.
  */
 
-class Google_Service_CloudResourceManager_Binding extends Google_Collection
+class Google_Service_CloudResourceManager_SetOrgPolicyRequest extends Google_Model
 {
-  protected $collection_key = 'members';
-  public $members;
-  public $role;
+  protected $policyType = 'Google_Service_CloudResourceManager_OrgPolicy';
+  protected $policyDataType = '';
 
-  public function setMembers($members)
+  /**
+   * @param Google_Service_CloudResourceManager_OrgPolicy
+   */
+  public function setPolicy(Google_Service_CloudResourceManager_OrgPolicy $policy)
   {
-    $this->members = $members;
+    $this->policy = $policy;
   }
-  public function getMembers()
+  /**
+   * @return Google_Service_CloudResourceManager_OrgPolicy
+   */
+  public function getPolicy()
   {
-    return $this->members;
-  }
-  public function setRole($role)
-  {
-    $this->role = $role;
-  }
-  public function getRole()
-  {
-    return $this->role;
+    return $this->policy;
   }
 }

@@ -15,16 +15,16 @@
  * the License.
  */
 
-class Google_Service_CloudResourceManager_MoveFolderRequest extends Google_Model
+class Google_Service_CloudResourceManager_BooleanPolicy extends Google_Model
 {
-  public $destinationParent;
+  public $enforced;
 
-  public function setDestinationParent($destinationParent)
+  public function setEnforced($enforced)
   {
-    $this->destinationParent = $destinationParent;
+    $this->enforced = $enforced;
   }
-  public function getDestinationParent()
+  public function getEnforced()
   {
-    return $this->destinationParent;
+    return $this->enforced;
   }
 }

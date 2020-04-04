@@ -15,26 +15,25 @@
  * the License.
  */
 
-class Google_Service_CloudResourceManager_Binding extends Google_Collection
+class Google_Service_CloudResourceManager_ListAvailableOrgPolicyConstraintsRequest extends Google_Model
 {
-  protected $collection_key = 'members';
-  public $members;
-  public $role;
+  public $pageSize;
+  public $pageToken;
 
-  public function setMembers($members)
+  public function setPageSize($pageSize)
   {
-    $this->members = $members;
+    $this->pageSize = $pageSize;
   }
-  public function getMembers()
+  public function getPageSize()
   {
-    return $this->members;
+    return $this->pageSize;
   }
-  public function setRole($role)
+  public function setPageToken($pageToken)
   {
-    $this->role = $role;
+    $this->pageToken = $pageToken;
   }
-  public function getRole()
+  public function getPageToken()
   {
-    return $this->role;
+    return $this->pageToken;
   }
 }

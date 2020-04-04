@@ -15,26 +15,16 @@
  * the License.
  */
 
-class Google_Service_CloudResourceManager_Binding extends Google_Collection
+class Google_Service_CloudResourceManager_ListConstraint extends Google_Model
 {
-  protected $collection_key = 'members';
-  public $members;
-  public $role;
+  public $suggestedValue;
 
-  public function setMembers($members)
+  public function setSuggestedValue($suggestedValue)
   {
-    $this->members = $members;
+    $this->suggestedValue = $suggestedValue;
   }
-  public function getMembers()
+  public function getSuggestedValue()
   {
-    return $this->members;
-  }
-  public function setRole($role)
-  {
-    $this->role = $role;
-  }
-  public function getRole()
-  {
-    return $this->role;
+    return $this->suggestedValue;
   }
 }
